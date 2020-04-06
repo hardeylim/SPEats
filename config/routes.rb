@@ -9,5 +9,9 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :restaurants do
+
+    end
+
   end
 end
