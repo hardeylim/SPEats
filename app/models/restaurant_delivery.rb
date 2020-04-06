@@ -1,0 +1,3 @@
+class RestaurantDelivery < ApplicationRecord
+
+end
