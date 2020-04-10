@@ -1,0 +1,3 @@
+class UserOrderDetail < ApplicationRecord
+
+end
