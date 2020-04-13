@@ -4,7 +4,10 @@ class OrderRequests::Builder
   end
 
   def build_index
-    OrderRequest.all
+    OrderRequest.all.each do |order_request|
+      @order_requests.push(build_order_request_details(order_request))
+    end
+    @order_requests
   end
 
   def build_order_request_details(order_request) {
@@ -16,6 +19,6 @@ class OrderRequests::Builder
   end
 
   def compute_for_orders_submitted(order_request)
-
+    '40/40'
   end
 end
