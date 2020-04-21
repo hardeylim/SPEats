@@ -16,7 +16,21 @@ class Api::OrderRequestsController < ApplicationController
 
 
   def order_request_parameters
-    params.require(:orderRequest).permit(
+    # Adding permit requires an outer object that encloses parms
+    #
+    # params.permit(:orderRequest).permit(:restaurant_id)
+    # {
+    #   "orderRequest" : {
+    #     "restaurant_id" : 1
+    #   }
+    # }
+    #
+    # whilst removing it just makes the required params
+    # {
+    #   "restaurant_id" : 1
+    # }
+
+    params.permit(
         :restaurant_id
     )
   end
