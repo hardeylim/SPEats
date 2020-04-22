@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
@@ -17,6 +18,26 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem 'therubyracer', :platforms => :ruby
+
+gem 'rubocop'
+gem 'rack-cors'
+gem 'pry'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "httparty"
+
+# Respond to ActiveRecord errors in JSON format
+gem 'responders'
+# Convert ruby database in JSON format
+gem 'active_model_serializers'
+# Manage frontend assets
+gem 'bower-rails'
+# Allows to write HTML code within js assets folder
+# and compile HTML into assets pipeline
+gem 'angular-rails-templates'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
