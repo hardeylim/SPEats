@@ -3,11 +3,12 @@ module Oauth
 
     #BASE_URL = 'https://wwww.googleapis.com/gmail/v1/users/me'
     BASE_URL = 'https://www.googleapis.com/gmail/v1/users/userId/profile'
-
+    
     attr_reader :errors
 
     def initialize
       errors = []
+      response = []
     end
 
     def verify_oauth_token(google_access_token)

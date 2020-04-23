@@ -1,6 +1,7 @@
-class SessionsController < ApplicationController
-  skip_before_action :require_user
+=begin
 
+class SessionsController < ApplicationController
+  
   def create
     #Get access tokens from the google server
     access_token = request.env["omniauth.auth"]
@@ -28,3 +29,5 @@ class SessionsController < ApplicationController
   end
 
 end
+
+=end

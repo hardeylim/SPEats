@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
-  root to: 'application#index'
+ 
   namespace :api, defaults: { format: 'json' } do
     resources :users
-    scope module: :v1 do
-      
-      resource :sessions, only: %[index create]
-    end
-  end 
+    #get 'sessions', to: 'create'
+    get 'oauth/callback', to: 'oauths#callback'
+  end
+  
 end
+
+
+=begin
+  namespace :v1 do
+    resources :sessions, only [:login, :logout] do
+      collection do
+        post :login
+        post :login
+      end
+    end
+
+
+----
+post '/login', to: 'sessions#create', as: 'login'
+delete '' sessions#destroy
+=end

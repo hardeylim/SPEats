@@ -1,13 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def index 
-    session = Session.where(token: request.headers['Authorization'])
-    if session.present?
-      render json: Users::Builder.new.build_index
-    else
-      render json: {error: "Session Invalid"}, status: 401
-    end
-
+    render json: Users::Builder.new.build_index
   end
 
   def show
