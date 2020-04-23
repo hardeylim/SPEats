@@ -30,8 +30,11 @@ class Api::OrderRequestsController < ApplicationController
     #   "restaurant_id" : 1
     # }
 
-    params.permit(
-        :restaurant_id
+    params.require(:orderRequest)
+        .permit(
+        :restaurant_id,
+        :date,
+        :deadline
     )
   end
 
